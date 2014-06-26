@@ -107,4 +107,4 @@ To nest your content, add a new `.row` inside a `.col`, and set of `.col-ld-*` c
 ```
 
 ## Demo
-Check out the demo and play around on [Code Pen] (http://codepen.io/pedroreis/pen/ituho).
+Check out the demo and play around on [Code Pen] (http://codepen.io/pedroreis/pen/ituho) and/or check the compiled CSS on [SassMeister](http://sassmeister.com/gist/75073548a2a598f75e40).
