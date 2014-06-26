@@ -1,0 +1,120 @@
+/*------------------------------------*\
+    $VARIABLES
+\*------------------------------------*/
+
+/*
+ * Breakpoints
+ */
+
+$breakpoint-small:  640px;
+$breakpoint-large:  1200px;
+
+
+
+/*
+ * Breakpoints list
+ */
+
+$breakpoints-list: (
+    'sd' '(max-width:' + $breakpoint-small + ')',
+    'md' '(min-width:' + ($breakpoint-small + 1) + ') and (max-width:' + ($breakpoint-large - 1) + ')',
+    'ld' '(min-width:' + $breakpoint-large + ')'
+);
+
+
+
+/*
+ * Number of total columns
+ */
+
+$max-width:         1200px;
+
+
+
+/*
+ * Number of total columns
+ */
+
+$grid-columns:      12;
+
+
+
+/*
+ * Space between columns
+ */
+
+$gutter:            20px;
+
+
+
+
+
+/*------------------------------------*\
+    Grid basic styles
+\*------------------------------------*/
+
+/*
+ * Grid scaffolding
+ */
+
+.row {
+  @extend .clearfix;
+  clear: both;
+  margin-left: -$gutter;
+}
+
+.col {
+  float: left;
+  padding-left: $gutter;
+  margin-bottom: $gutter;
+  .row {
+    margin-top: $gutter;
+  }
+}
+
+
+
+/*
+ * Columns generator
+ */
+
+@each $breakpoint in $breakpoints-list {
+  $name: nth($breakpoint, 1);
+  $declaration: nth($breakpoint, 2);
+  @media only screen and #{$declaration}{
+    @for $i from 1 through $grid-columns {
+      .col--#{$name}-#{$i} {
+        width: percentage($i/$grid-columns);
+        @if $name == sd {
+          .col {
+            margin-bottom: $gutter;
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+      .col--#{$name}-offset-#{$i} {
+        margin-left: percentage($i/$grid-columns);
+      }
+    }
+  }
+}
+
+
+
+/*
+ * Utilities
+ */
+
+.clearfix {
+  &:before,
+  &:after{
+    content: '';
+    display: table;
+    line-height: 0;
+  }
+  &:after{
+    clear: both;
+  }
+}
