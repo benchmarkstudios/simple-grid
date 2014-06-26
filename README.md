@@ -5,7 +5,7 @@ Based on existing grid systems, such as [Twitter Bootstrap Grid System](http://g
 
 ## Setup
 
-The only thing you need to setup to start building your grid is to fill in or adjust the number of `$grid-columns`, the desired `$gutter` and the main container `$max-width`.
+The only thing you need to do to start building your grid is to adjust the number of `$grid-columns`, the desired `$gutter` and the main container `$max-width`.
 
 ## How it works
 
