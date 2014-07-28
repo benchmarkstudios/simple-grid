@@ -59,18 +59,12 @@ $gutter:            20px;
 
 .row {
   @extend .clearfix;
-  clear: both;
   margin-left: -$gutter;
 }
 
 .col {
   float: left;
   padding-left: $gutter;
-  margin-bottom: $gutter;
-  .row {
-    margin-top: $gutter;
-  }
-}
 
 
 
