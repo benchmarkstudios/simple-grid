@@ -16,9 +16,9 @@ $breakpoint-large:  1200px;
  */
 
 $breakpoints-list: (
-    'sd' '(max-width:' + $breakpoint-small + ')',
-    'md' '(min-width:' + ($breakpoint-small + 1) + ') and (max-width:' + ($breakpoint-large - 1) + ')',
-    'ld' '(min-width:' + $breakpoint-large + ')'
+  'ld' null,
+  'md' '(min-width:' + ($breakpoint-small + 1) + ') and (max-width:' + ($breakpoint-large - 1) + ')',
+  'sd' '(max-width:' + $breakpoint-small + ')'
 );
 
 
@@ -46,6 +46,20 @@ $grid-columns:      12;
 $gutter:            20px;
 
 
+/*
+ * Grid loop mixin
+ */
+
+@mixin grid-loop($name){
+  @for $i from 1 through $grid-columns {
+    .col--#{$name}-#{$i} {
+      width: percentage($i/$grid-columns);
+    }
+    .col--#{$name}-offset-#{$i} {
+      margin-left: percentage($i/$grid-columns);
+    }
+  }
+}
 
 
 
@@ -59,12 +73,18 @@ $gutter:            20px;
 
 .row {
   @extend .clearfix;
+  clear: both;
   margin-left: -$gutter;
 }
 
 .col {
   float: left;
   padding-left: $gutter;
+  margin-bottom: $gutter;
+  .row {
+    margin-top: $gutter;
+  }
+}
 
 
 
@@ -73,26 +93,28 @@ $gutter:            20px;
  */
 
 @each $breakpoint in $breakpoints-list {
+
   $name: nth($breakpoint, 1);
   $declaration: nth($breakpoint, 2);
-  @media only screen and #{$declaration}{
-    @if $name == sd {
-      .col .col {
-        margin-bottom: $gutter;
-        &:last-child {
-          margin-bottom: 0;
+
+  @if $name == ld {
+    @include grid-loop($name);
+  }
+  
+  @else {
+    @media only screen and #{$declaration} {
+      @if $name == sd {
+        .col .col {
+          margin-bottom: $gutter;
+          &:last-child {
+            margin-bottom: 0;
+          }
         }
       }
+      @include grid-loop($name);
     }
-    @for $i from 1 through $grid-columns {
-      .col--#{$name}-#{$i} {
-        width: percentage($i/$grid-columns);
-      }
-      .col--#{$name}-offset-#{$i} {
-        margin-left: percentage($i/$grid-columns);
-      }
-    }
-  }
+  } 
+
 }
 
 
