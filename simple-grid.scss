@@ -103,14 +103,6 @@ $gutter:            20px;
   
   @else {
     @media only screen and #{$declaration} {
-      @if $name == sd {
-        .col .col {
-          margin-bottom: $gutter;
-          &:last-child {
-            margin-bottom: 0;
-          }
-        }
-      }
       @include grid-loop($name);
     }
   } 
