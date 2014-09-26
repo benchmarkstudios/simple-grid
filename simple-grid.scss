@@ -79,6 +79,9 @@ $gutter:            20px;
 .col {
   float: left;
   padding-left: $gutter;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing:    border-box;
+  box-sizing:         border-box;
 }
 
 
