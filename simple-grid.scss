@@ -24,10 +24,18 @@ $breakpoints-list: (
 
 
 /*
- * Number of total columns
+ * Space between columns
  */
 
-$max-width:         1200px;
+$gutter:            20px;
+
+
+
+/*
+ * Max width of container
+ */
+
+$max-width:         1200px + ($gutter * 2);
 
 
 
@@ -38,12 +46,6 @@ $max-width:         1200px;
 $grid-columns:      12;
 
 
-
-/*
- * Space between columns
- */
-
-$gutter:            20px;
 
 
 /*
