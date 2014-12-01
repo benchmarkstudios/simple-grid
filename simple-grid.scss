@@ -1,54 +1,44 @@
-/*------------------------------------*\
-    $VARIABLES
-\*------------------------------------*/
+/**
+ * Space between columns
+ */
 
-/*
+$grid-gutter: 20px !default;
+
+
+/**
+ * Max width of container
+ */
+
+$grid-max-width: 1200px + ($grid-gutter * 2) !default;
+
+
+/**
+ * Number of total columns
+ */
+
+$grid-columns: 12 !default;
+
+
+/**
  * Breakpoints
  */
 
-$breakpoint-small:  640px;
-$breakpoint-large:  1200px;
+$breakpoint-sd: 640px !default;
+$breakpoint-ld: 1200px !default;
 
 
-
-/*
+/**
  * Breakpoints list
  */
 
 $breakpoints-list: (
   'ld' null,
-  'md' '(min-width:' + ($breakpoint-small + 1) + ') and (max-width:' + ($breakpoint-large - 1) + ')',
-  'sd' '(max-width:' + $breakpoint-small + ')'
+  'md' '(min-width:' + ($breakpoint-sd + 1) + ') and (max-width:' + ($breakpoint-ld - 1) + ')',
+  'sd' '(max-width:' + $breakpoint-sd + ')'
 );
 
 
-
-/*
- * Space between columns
- */
-
-$gutter:            20px;
-
-
-
-/*
- * Max width of container
- */
-
-$max-width:         1200px + ($gutter * 2);
-
-
-
-/*
- * Number of total columns
- */
-
-$grid-columns:      12;
-
-
-
-
-/*
+/**
  * Grid loop mixin
  */
 
@@ -66,31 +56,39 @@ $grid-columns:      12;
 }
 
 
-
-/*------------------------------------*\
-    Grid basic styles
-\*------------------------------------*/
-
-/*
+/**
  * Grid scaffolding
  */
 
+.container {
+  max-width: $grid-max-width;
+  margin: 0 auto;
+  padding: 0 $grid-gutter;
+}
+
 .row {
-  @extend .clearfix;
-  margin-left: -$gutter;
+  margin-left: -$grid-gutter;
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
 }
 
 .col {
   float: left;
-  padding-left: $gutter;
+  padding-left: $grid-gutter;
   -webkit-box-sizing: border-box;
-  -moz-box-sizing:    border-box;
-  box-sizing:         border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 
-
-/*
+/**
  * Columns generator
  */
 
@@ -109,32 +107,4 @@ $grid-columns:      12;
     }
   } 
 
-}
-
-
-/*
- * User styles
- */
- 
-.container{
-  max-width: $max-width;
-  margin: 0 auto;
-  padding: 0 $gutter;
-}
-
-
-/*
- * Utilities
- */
-
-.clearfix {
-  &:before,
-  &:after{
-    content: '';
-    display: table;
-    line-height: 0;
-  }
-  &:after{
-    clear: both;
-  }
 }
