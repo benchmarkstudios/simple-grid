@@ -67,6 +67,7 @@ $breakpoints-list: (
 }
 
 .row {
+  list-style: none;
   margin-left: -$grid-gutter;
   &:before,
   &:after {
