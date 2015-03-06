@@ -23,19 +23,15 @@ $grid-columns: 12 !default;
  * Breakpoints
  */
 
-$breakpoint-sd: 640px !default;
-$breakpoint-ld: 1200px !default;
+$breakpoint-sd: 768px;
+$breakpoint-md: 992px;
+$breakpoint-ld: 1200px;
 
-
-/**
- * Breakpoints list
- */
-
-$breakpoints-list: (
-  'ld' null,
-  'md' '(min-width:' + ($breakpoint-sd + 1) + ') and (max-width:' + ($breakpoint-ld - 1) + ')',
-  'sd' '(max-width:' + $breakpoint-sd + ')'
-);
+$breakpoints: (
+  'ld' '(min-width:' + $breakpoint-ld + ')',
+  'md' '(min-width:' + $breakpoint-sd + ') and (max-width:' + ($breakpoint-md - 1) + ')',
+  'sd' '(max-width:' + ($breakpoint-sd - 1) + ')'
+) !default;
 
 
 /**
@@ -93,7 +89,7 @@ $breakpoints-list: (
  * Columns generator
  */
 
-@each $breakpoint in $breakpoints-list {
+@each $breakpoint in $breakpoints {
 
   $name: nth($breakpoint, 1);
   $declaration: nth($breakpoint, 2);
