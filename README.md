@@ -109,7 +109,7 @@ To nest your content, add a new `.row` inside a `.col`, and set of `.col-ld-*` c
 To remove all the gutters from your columns just add the class `.row--gutterless` to your `.row` element.
 
 ```html
-  <div class="row row gutters">
+  <div class="row row--gutterless">
     <div class="col col--xs-12 col--sm-12 col--md-6 col--lg-6">
       <p>Col 15</p>
     </div>
