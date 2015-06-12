@@ -83,7 +83,6 @@ Increase the left margin of a column by the number of columns you want, along wi
       <p>Col 13 with offset 3</p>
     </div>
   </div>
-  </div>
 ```
 
 ### Nesting columns
