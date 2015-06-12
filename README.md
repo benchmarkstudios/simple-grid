@@ -21,38 +21,38 @@ Grid systems, as you may know, are used for creating page layouts through a seri
 ## Markup
 
 ### Basic usage
-Simple column set - `<div class="col col--sd-12 col--md-12 col--ld-12"></div>` - inside a `.row`.
+Simple column set - `<div class="col col--xs-12 col--sm-12 col--md-12 col--lg-12"></div>` - inside a `.row`.
 
 ```html
   <div class="row">
-    <div class="col col--sd-12 col--md-12 col--ld-12">
+    <div class="col col--xs-12 col--sm-12 col--md-12 col--lg-12">
       <p>Col 1</p>
     </div>
   </div>
   <div class="row">
-    <div class="col col--sd-12 col--md-6 col--ld-6">
+    <div class="col col--xs-12 col--sm-12 col--md-6 col--lg-6">
       <p>Col 2</p>
     </div>
-    <div class="col col--sd-12 col--md-6 col--ld-6">
+    <div class="col col--xs-12 col--sm-12 col--md-6 col--lg-6">
       <p>Col 3</p>
     </div>
   </div>
   <div class="row">
-    <div class="col col--sd-12 col--md-4 col--ld-4">
+    <div class="col col--xs-12 col--sm-12 col--md-4 col--lg-4">
       <p>Col 4</p>
     </div>
-    <div class="col col--sd-12 col--md-4 col--ld-4">
+    <div class="col col--xs-12 col--sm-12 col--md-4 col--lg-4">
       <p>Col 5</p>
     </div>
-    <div class="col col--sd-12 col--md-4 col--ld-4">
+    <div class="col col--xs-12 col--sm-12 col--md-4 col--lg-4">
       <p>Col 6</p>
     </div>
   </div>
   <div class="row">
-    <div class="col col--sd-12 col--md-8 col--ld-8">
+    <div class="col col--xs-12 col--sm-12 col--md-8 col--lg-8">
       <p>Col 7</p>
     </div>
-    <div class="col col--sd-12 col--md-4 col--ld-4">
+    <div class="col col--xs-12 col--sm-12 col--md-4 col--lg-4">
       <p>Col 8</p>
     </div>
   </div>
@@ -63,23 +63,23 @@ Increase the left margin of a column by the number of columns you want, along wi
 
 ```html
   <div class="row">
-    <div class="col col--sd-12 col--md-4 col--ld-4">
+    <div class="col col--xs-12 col--sm-12 col--md-4 col--lg-4">
       <p>Col 9 with offset 0</p>
     </div>
-    <div class="col col--sd-12 col--md-4 col--ld-4 col--md-offset-4 col--ld-offset-4">
+    <div class="col col--xs-12 col--sm-12 col--md-4 col--lg-4 col--xs-offset-4 col--sm-offset-0 col--md-offset-4 col--lg-offset-4">
       <p>Col 10 with offset 4</p>
     </div>
   </div>
   <div class="row">
-    <div class="col col--sd-12 col--md-3 col--ld-3 col--md-offset-3 col--ld-offset-3">
+    <div class="col col--xs-12 col--sm-12 col--md-3 col--lg-3 col--xs-offset-0 col--sm-offset-0 col--md-offset-3 col--lg-offset-3">
       <p>Col 11 with offset 3</p>
     </div>
-    <div class="col col--sd-12 col--md-3 col--ld-3 col--md-offset-6 col--ld-offset-6">
+    <div class="col col--xs-12 col--sm-12 col--md-3 col--lg-3 col--xs-offset-0 col--sm-offset-0 col--md-offset-6 col--lg-offset-6">
       <p>Col 12 with offset 6</p>
     </div>
   </div>
   <div class="row">
-    <div class="col col--sd-12 col--md-6 col--ld-6 col--md-offset-3 col--ld-offset-3">
+    <div class="col col--xs-12 col--sm-12 col--md-6 col--lg-6 col--xs-offset-0 col--sm-offset-0 col--md-offset-3 col--lg-offset-3">
       <p>Col 13 with offset 3</p>
     </div>
   </div>
@@ -91,16 +91,30 @@ To nest your content, add a new `.row` inside a `.col`, and set of `.col-ld-*` c
 
 ```html
   <div class="row">
-    <div class="col col--sd-12 col--md-12 col--ld-12">
+    <div class="col col--xs-12 col--sm-12 col--md-12 col--lg-12">
       <p>Col 14</p>
       <div class="row">
-        <div class="col col--sd-12 col--md-6 col--ld-6">
+        <div class="col col--xs-12 col--sm-12 col--md-6 col--lg-6">
           <p>Nested col 14.1</p>
         </div>
-        <div class="col col--sd-12 col--md-6 col--ld-6">
+        <div class="col col--xs-12 col--sm-12 col--md-6 col--lg-6">
           <p>Nested col 14.2</p>
         </div>
       </div>
+    </div>
+  </div>
+```
+
+### Gutterless columns
+To remove all the gutters from your columns just add the class `.row--gutterless` to your `.row` element.
+
+```html
+  <div class="row row gutters">
+    <div class="col col--xs-12 col--sm-12 col--md-6 col--lg-6">
+      <p>Col 15</p>
+    </div>
+    <div class="col col--xs-12 col--sm-12 col--md-6 col--lg-6">
+      <p>Col 16</p>
     </div>
   </div>
 ```

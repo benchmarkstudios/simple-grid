@@ -11,14 +11,14 @@
  */
 
 .container {
-  @include clearfix();
+  @include clearfix;
   max-width: $grid-max-width;
   margin: 0 auto;
   padding: 0 $grid-gutter;
 }
 
 .row {
-  @include clearfix();
+  @include clearfix;
   list-style: none;
   margin-left: -$grid-gutter;
   &.row--gutterless {
@@ -30,11 +30,11 @@
   float: left;
   padding-left: $grid-gutter;
   box-sizing: border-box;
+  .row--gutterless & {
+    padding-left: 0;
+  }
 }
 
-.row--gutterless .col {
-  padding-left: 0;
-}
 
 
 /**
