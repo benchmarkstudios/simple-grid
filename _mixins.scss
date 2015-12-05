@@ -3,16 +3,16 @@
  */
 
 @mixin grid-loop($name){
-  @for $i from 0 through $grid-columns {
-    @if $i != 0 {
-      .col--#{$name}-#{$i} {
-        width: percentage($i/$grid-columns);
-      }
+    @for $i from 0 through $grid-columns {
+        @if $i != 0 {
+            .col--#{$name}-#{$i} {
+                width: percentage($i/$grid-columns);
+            }
+        }
+        .col--#{$name}-offset-#{$i} {
+            margin-left: percentage($i/$grid-columns);
+        }
     }
-    .col--#{$name}-offset-#{$i} {
-      margin-left: percentage($i/$grid-columns);
-    }
-  }
 }
 
 
@@ -21,12 +21,12 @@
  */
 
 @mixin clearfix {
-  &:before,
-  &:after {
-    content: " ";
-    display: table;
-  }
-  &:after {
-    clear: both;
-  }
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
 }
