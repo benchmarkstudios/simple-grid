@@ -29,7 +29,7 @@ $breakpoint-sm: 480px !default;
 
 $breakpoints: (
     'lg' '(min-width: ' + $breakpoint-lg + ')',
-    'md' '(min-width: ' + ($breakpoint-md) + ') and (max-width: ' + ($breakpoint-lg - 1) + ')',
+    'md' '(min-width: ' + $breakpoint-md + ') and (max-width: ' + ($breakpoint-lg - 1) + ')',
     'sm' '(max-width:'  + ($breakpoint-md - 1) + ')',
     'xs' '(max-width: ' + $breakpoint-sm + ')'
 ) !default;
