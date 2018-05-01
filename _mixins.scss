@@ -7,6 +7,9 @@
         @if $i != 0 {
             .col--#{$name}-#{$i} {
                 width: percentage($i/$grid-columns);
+                .row--flex & {
+                    flex: 0 0 percentage($i/$grid-columns);
+                }
             }
         }
         .col--#{$name}-offset-#{$i} {
