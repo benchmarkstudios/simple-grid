@@ -25,6 +25,10 @@
     &.row--gutterless {
         margin-left: 0;
     }
+    &.row--flex {
+        display: flex;
+        flex-wrap: wrap;
+    }
 }
 
 .col {
