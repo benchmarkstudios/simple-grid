@@ -8,7 +8,7 @@
             .col--#{$name}-#{$i} {
                 width: percentage($i/$grid-columns);
                 .row--flex & {
-                    flex: 1;
+                    flex-basis: percentage($i/$grid-columns);
                     max-width: percentage($i/$grid-columns);
                     width: auto;
                     float: none;
