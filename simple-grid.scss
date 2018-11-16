@@ -19,9 +19,11 @@
 }
 
 .row {
-    @include clearfix;
     list-style: none;
     margin-left: -$grid-gutter;
+    &:not(.row--flex) {
+        @include clearfix;
+    }
     &.row--gutterless {
         margin-left: 0;
     }
